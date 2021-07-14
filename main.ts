@@ -2,6 +2,53 @@ let x3 = 0
 let y = 0
 let x2 = 0
 function _2 () {
+    basic.showLeds(`
+        # # # # #
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        # # # # #
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        # # # # #
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        # # # # #
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        # # # # #
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+}
+input.onButtonPressed(Button.A, function () {
+    _1()
+})
+function _3 () {
     x3 = 4
     for (let index = 0; index < 5; index++) {
         y = 4
@@ -15,12 +62,12 @@ function _2 () {
         basic.clearScreen()
     }
 }
-input.onButtonPressed(Button.A, function () {
-    _1()
-})
 input.onButtonPressed(Button.AB, function () {
-    _1()
-    _2()
+    for (let index = 0; index < 4; index++) {
+        _2()
+        _1()
+        _3()
+    }
 })
 input.onButtonPressed(Button.B, function () {
     _2()
